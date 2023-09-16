@@ -18,7 +18,4 @@
 //   console.log("Connected!");
 // });
 
-function addUser(){
-    return document.getElementById('test').innerHTML = 'Completed';
 
-}
