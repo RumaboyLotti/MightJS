@@ -1,6 +1,6 @@
-var postgres = require('pg');
+const { Client} = require('pg');
 
-const connection = postgres.Connection({
+const client = new Client({
   host: 'localhost',
   port: 5432,
   user: 'postgres',
@@ -8,7 +8,7 @@ const connection = postgres.Connection({
   database: 'Might-Auth',
 });
   
-connection.connect(function(err) {
+client.connect(function(err) {
   if (err) {
     console.error("Error connecting to the database:", err);
     // Handle the error here or perform any necessary cleanup
@@ -18,20 +18,20 @@ connection.connect(function(err) {
   console.log("Connected!");
 });
 
-var username = document.getElementById('username').value;
-var firstName = document.getElementById('fName').value;
-var lastName = document.getElementById('lName').value;
-var pWord= document.getElementById("password");
-var email = document.getElementById("email");
+// var username = document.getElementById('username').value;
+// var firstName = document.getElementById('fName').value;
+// var lastName = document.getElementById('lName').value;
+// var pWord= document.getElementById("password");
+// var email = document.getElementById("email");
 
-var sql = "INSERT INTO accounts (UserName, FirstName, LastName, Email, UserPassword) VALUES ('"+username+ "', '"+firstName+"','"+lastName+"','"+email+"','"+pWord+"')";
-con.query(sql, function (err, result) {
-    if (err) {
-        throw err;
+// var sql = "INSERT INTO accounts (UserName, FirstName, LastName, Email, UserPassword) VALUES ('"+username+ "', '"+firstName+"','"+lastName+"','"+email+"','"+pWord+"')";
+// con.query(sql, function (err, result) {
+//     if (err) {
+//         throw err;
 
-    }
+//     }
 
-    console.log(result.affectedRows + " record(s) updated");
-  });
+//     console.log(result.affectedRows + " record(s) updated");
+//   });
 
 
