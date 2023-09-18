@@ -9,6 +9,8 @@ const router = express.Router();
 const app = express();
 
 app.use(express.static('public'));
+app.use(addUser);
+app.use("/", router);
 
 app.use(
   session({
@@ -18,15 +20,16 @@ app.use(
   })
 );
 
-router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname + "/index.html"));
+app.get("/", (req, res) => {
+  res.sendFile('index.html', { root: __dirname });
 });
 
-app.use("/", router);
+
 app.listen(3000, () => {
   console.log("Server listening on http://localhost:3000");
 });
 
-function addUser() {
-  return (document.getElementById("test").innerHTML = "Completed");
+function addUser(req, res) {
+  return (console.log("addUser"));
+
 }

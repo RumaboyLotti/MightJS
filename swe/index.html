@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MightAuth</title>
+    <!-- <script src="index.js"></script> -->
+    <script src="swe/oauth2.js"></script>
+    <script src="swe/forms.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div>
+      <h3>Sign Up</h3>
+      <form action="forms.js" method="get">
+        <label for="username" id="Uname">Username</label>
+        <input type="text" id="username" name="username" />
+        <label for="password" id="Pword">Password</label>
+        <input type="password" id="password" name="password" />
+        <input onclick="" type="submit" value="Log-In" id="Sign-In" />
+      </form>
+      <button  type="button" onclick="oauthSignIn()" id="Google">Sign in With Google</button>
+ 
+
+      <p id="test"></p>
+
+      <form action="forms.js" method="post">
+        <label for="username" id="Uname">Username</label>
+        <input type="text" id="username" name="username" />
+        <label for="password" id="Pword">Password</label>
+        <input type="password" id="password" name="password" />
+        <label for="fname" id="fnameL">First Name</label>
+        <input type="text" id="fname" name="firstName" />
+        <label for="lname" id="lnamel">Last Name</label>
+        <input type="text" id="lname" name="lastName" />
+        <label for="email" id="Mail">Email</label>
+        <input type="text" name="email" id="email" />
+        <input onclick="addUser()" type="submit" value="Sign-Up" id="Sign-Up" />
+      </form>
+    </div>
+  </body>
+</html>

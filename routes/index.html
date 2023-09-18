@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MightAuth</title>
     <!-- <script src="index.js"></script> -->
-    <script src="OA-Google.js"></script>
-    <script src="app.js"></script>
+    <script src="routes/OA-Google.js"></script>
+    <script src="routes/app.js"></script>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div>
       <h3>Sign Up</h3>
-      <form action="index.js" method="get">
+      <form action="routes/app.js" method="get">
         <label for="username" id="Username">Username</label>
         <input type="text" id="username" name="username" />
         <label for="password" id="Password">Password</label>
         <input type="password" id="password" name="password" />
         <input onclick="addUser()" type="submit" value="Log-In" id="Sign-In" />
       </form>
-      <button onclick="oauthSignIn()" id="Google">Sign in With Google</button>
+      <button  type="button" onclick="oauthSignIn()" id="Google">Sign in With Google</button>
 
       <p id="test"></p>
     </div>
