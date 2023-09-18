@@ -5,23 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MightAuth</title>
     <!-- <script src="index.js"></script> -->
-    <script src="routes/OA-Google.js"></script>
-    <script src="routes/app.js"></script>
+    <script src="OA-Google.js"></script>
+    <script src="app.js"></script>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div>
       <h3>Sign Up</h3>
-      <form action="routes/app.js" method="get">
-        <label for="username" id="Username">Username</label>
+      <form action="forms.js" method="get">
+        <label for="username" id="Uname">Username</label>
         <input type="text" id="username" name="username" />
-        <label for="password" id="Password">Password</label>
+        <label for="password" id="Pword">Password</label>
         <input type="password" id="password" name="password" />
-        <input onclick="addUser()" type="submit" value="Log-In" id="Sign-In" />
+        <input onclick="" type="submit" value="Log-In" id="Sign-In" />
       </form>
       <button  type="button" onclick="oauthSignIn()" id="Google">Sign in With Google</button>
+ 
 
       <p id="test"></p>
+
+      <form action="database.js" method="post">
+        <label for="username" id="Uname">Username</label>
+        <input type="text" id="username" name="username" />
+        <label for="password" id="Pword">Password</label>
+        <input type="password" id="password" name="password" />
+        <label for="fname" id="fnameL">First Name</label>
+        <input type="text" id="fname" name="firstName" />
+        <label for="lname" id="lnamel">Last Name</label>
+        <input type="text" id="lname" name="lastName" />
+        <label for="email" id="Mail">Email</label>
+        <input type="text" name="email" id="email" />
+        <input onclick="addUser()" type="submit" value="Sign-Up" id="Sign-Up" />
+      </form>
     </div>
   </body>
 </html>
