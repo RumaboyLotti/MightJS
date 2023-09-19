@@ -23,6 +23,7 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
+
 function addUser() {
   event.preventDefault(); // Prevent the default form submission behavior
 
