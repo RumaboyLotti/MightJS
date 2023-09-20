@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MightAuth</title>
     <!-- <script src="index.js"></script> -->
-    <script src="OA-Google.js"></script>
-    <script src="app.js"></script>
-    <link rel="stylesheet" href="index.css" />
+    <script type="module" src="app.js"></script>
+    <script type="module" src="index.css">  </script>
   </head>
   <body>
+      <script type="module" src="OA-Google.js"></script>
     <div>
       <h3>Sign Up</h3>
       <form action="forms.js" method="get">
@@ -19,7 +19,24 @@
         <input type="password" id="password" name="password" />
         <input onclick="" type="submit" value="Log-In" id="Sign-In" />
       </form>
-      <button  type="button" onclick="oauthSignIn()" id="Google">Sign in With Google</button>
+
+      <!--         
+
+          Finish the google sign in button
+          ensure it works with the .env file,
+          and that it can be used to sign in
+          to the app. ensure we can also save the result of the auth to the database.
+          add css to make it look nice. and finish.
+
+      -->
+
+      <button onclick="oauthSignIn()" type="button" id="Google" >Sign in With Google</button>
+      <script>     
+        const button = document.getElementById('Google');
+          if (button) {
+            button.addEventListener('click', oauthSignIn);
+          } 
+        </script>
  
 
       <p id="test"></p>
