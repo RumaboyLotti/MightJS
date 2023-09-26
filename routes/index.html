@@ -1,59 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MightAuth</title>
-    <!-- <script src="index.js"></script> -->
-    <script type="module" src=" app.js"></script>
-    <link type="stylesheet" href="index.css"/>  
-  </head>
-  <body>
-      <script type="module" src="OA-Google.js" defer></script>
-    <div>
-      <h3>Sign Up</h3>
-      <form action="forms.js" method="get">
-        <label for="username" id="Uname">Username</label>
-        <input type="text" id="username" name="username" />
-        <label for="password" id="Pword">Password</label>
-        <input type="password" id="password" name="password" />
-        <input onclick="" type="submit" value="Log-In" id="Sign-In" />
-      </form>
-
-      <!--         
-
-          Finish the google sign in button
-          ensure it works with the .env file,
-          and that it can be used to sign in
-          to the app. ensure we can also save the result of the auth to the database.
-          add css to make it look nice. and finish.
-
-      -->
-
-      <button onclick="oauthSignIn()" type="button" id="Google" >Sign in With Google</button>
-      <script>     
-        const button = document.getElementById('Google');
-          if (button) {
-            button.addEventListener('click', oauthSignIn);
-          } 
-        </script>
- 
-
-      <p id="test"></p>
-
-      <form action="/submitForm" method="post">
-        <label for="username" id="Uname">Username</label>
-        <input type="text" id="username" name="username" />
-        <label for="password" id="Pword">Password</label>
-        <input type="password" id="password" name="password" />
-        <label for="fname" id="fnameL">First Name</label>
-        <input type="text" id="fname" name="firstName" />
-        <label for="lname" id="lnamel">Last Name</label>
-        <input type="text" id="lname" name="lastName" />
-        <label for="email" id="Mail">Email</label>
-        <input type="text" name="email" id="email" />
-        <input onclick="addUser()" type="submit" value="Sign-Up" id="Sign-Up" />
-      </form>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MightAuth</title>
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: linear-gradient(#141e30, #243b55);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-box {
+      width: 400px;
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.5);
+      box-sizing: border-box;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      color: #fff;
+    }
+    .login-box h2 {
+      margin: 0 0 30px;
+      padding: 0;
+      text-align: center;
+    }
+    .login-box .user-box {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    .login-box .user-box input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 5px;
+      border: none;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      background: transparent;
+    }
+    .login-box .user-box label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: .5s;
+    }
+    .login-box .user-box input:focus ~ label,
+    .login-box .user-box input:valid ~ label {
+      top: -20px;
+      left: 0;
+      color: #03e9f4;
+      font-size: 12px;
+    }
+    .login-box form a {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #03e9f4;
+      font-size: 16px;
+      text-decoration: none;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: .5s;
+      margin-top: 40px;
+      letter-spacing: 4px;
+      border: 1px solid #03e9f4;
+      border-radius: 5px;
+    }
+    .login-box form a:hover {
+      background: #03e9f4;
+      color: #000;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #03e9f4,
+                  0 0 25px #03e9f4,
+                  0 0 50px #03e9f4,
+                  0 0 100px #03e9f4;
+    }
+  </style>
+</head>
+<body>
+  <script type="module" src="app.js"></script>
+  <script type="module" src="OA-Google.js" defer></script>s
+  <div class="login-box">
+    <h2>Log-In</h2>
+    <div class="user-box">
+      <input type="text" id="username" name="username" required>
+      <label for="username">Username</label>
     </div>
-  </body>
+    <div class="user-box">
+      <input type="password" id="password" name="password" required>
+      <label for="password">Password</label>
+    </div>
+    <input type="submit" value="Log-In" id="Sign-In">
+    <a href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Sign in With Google
+    </a>
+  </div>
+
+
+</body>
 </html>
+
