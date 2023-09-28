@@ -92,7 +92,7 @@
 </head>
 <body>
   <script type="module" src="app.js"></script>
-  <script type="module" src="OA-Google.js" defer></script>s
+  <script type="module" src="OA-Google.js" defer></script>
   <div class="login-box">
     <h2>Log-In</h2>
     <div class="user-box">
@@ -103,14 +103,10 @@
       <input type="password" id="password" name="password" required>
       <label for="password">Password</label>
     </div>
-    <input type="submit" value="Log-In" id="Sign-In">
-    <a href="#">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Sign in With Google
-    </a>
+    <input type="submit" onclick="addUser()" value="Log-In" id="Sign-In">
+    <input type="button" onclick="" value="Sign in With Google" id="GoogleAuth">
+  
+ 
   </div>
 
 
