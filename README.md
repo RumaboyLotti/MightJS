@@ -23,7 +23,7 @@ Might Auth is an authentication system developed using JavaScript, Express, and 
 
 ## Repository Structure
 
-- `src`: Source code for the authentication system
+- `routes`: Source code for the authentication system
 - `README.md`: Project documentation
 - `LICENSE`: Project license
 
